@@ -1,4 +1,4 @@
-SDK_DIR = /home/dar/riscv/milkv/duo-buildroot-sdk
+SDK_DIR = /path/to/duo-buildroot-sdk
 KERN_DIR = $(SDK_DIR)/linux_5.10/build/cv1800b_milkv_duo_sd
 
 all:
