@@ -168,7 +168,6 @@ void lsm6dsr_reginit(void)
 
 static int lsm6dsr_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {
-	int ret = 0;
 
 	/* 1、构建设备号 */
 	if (lsm6dsrdev.major) {

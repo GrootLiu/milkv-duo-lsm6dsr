@@ -1,1 +1,2 @@
-# riscv_milkv-duo
+# milkv-duo-lsm6dsr
+

@@ -1,12 +1,14 @@
-SDK_DIR = /path/to/duo-buildroot-sdk
-KERN_DIR = $(SDK_DIR)/linux_5.10/build/cv1800b_milkv_duo_sd
+SDK_DIR 	  = /path/to/duo-buildroot-sdk
+CROSS_COMPILE = $(SDK_DIR)/host-tools/gcc/riscv64-linux-musl-x86_64/bin/riscv64-unknown-linux-musl-
+KSRC		  = $(SDK_DIR)/linux_5.10/build/cv1800b_milkv_duo_sd
+ARCH		  = riscv
 
 all:
-	make -C $(KERN_DIR) M=$(PWD) modules
-	$(CROSS_COMPILE)gcc lsm6dsr-app.c -o lsm6dsr-app -Wall -pthread -O2
+	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules
+	$(CROSS_COMPILE)gcc lsm6dsr-app.c -o lsm6dsr-app -Wall -O2 -mcpu=c906fdv -march=rv64imafdcv0p7xthead -mcmodel=medany -mabi=lp64d -static
 
 clean:
-	make -C $(KERN_DIR) M=$(PWD) modules clean
+	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules clean
 	rm -rf modules.order
 	rm -rf lsm6dsr-app
 

@@ -18,11 +18,10 @@ int main(int argc, char *argv[])
 	signed int buffer[7];
 	signed int gyro_x_adc, gyro_y_adc, gyro_z_adc;
 	signed int accel_x_adc, accel_y_adc, accel_z_adc;
-	signed int temp_adc;
+//	signed int temp_adc;
 
 	float gyro_x_act, gyro_y_act, gyro_z_act;
 	float accel_x_act, accel_y_act, accel_z_act;
-	float temp_act;
 
 	int ret = 0;
 	char* filename = "/dev/lsm6dsr";
@@ -52,7 +51,7 @@ int main(int argc, char *argv[])
 			printf("\r\nADC value:\r\n");
 			printf("gx = %d, gy = %d, gz = %d\r\n", gyro_x_adc, gyro_y_adc, gyro_z_adc);
 			printf("ax = %d, ay = %d, az = %d\r\n", accel_x_adc, accel_y_adc, accel_z_adc);
-			printf("temp = %d\r\n", temp_adc);
+//			printf("temp = %d\r\n", temp_adc);
 			printf("TRUE value:");
 			printf("act gx = %.2f°/S, act gy = %.2f°/S, act gz = %.2f°/S\r\n", gyro_x_act, gyro_y_act, gyro_z_act);
 			printf("act ax = %.2fg, act ay = %.2fg, act az = %.2fg\r\n", accel_x_act, accel_y_act, accel_z_act);
