@@ -42,6 +42,5 @@ $ git clone -b i2c-module git@github.com:GrootLiu/milkv-duo-lsm6dsr.git
 $ cd milkv-duo-lsm6dsr/i2c-module
 ```
 
-进入仓库后，i2c-module 文件夹内有一个 README.md，这里作为一个附件贴在下面：
-https://github.com/GrootLiu/milkv-duo-lsm6dsr/tree/i2c-module/i2c-module
+进入仓库后，阅读 `i2c-module/` 文件下面的 README.md 文件
 
